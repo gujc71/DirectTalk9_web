@@ -11,11 +11,31 @@ import Typography from '@material-ui/core/Typography';
 
 import styles from './mycom/styles4List';
 import { connect } from 'react-redux';
+import {firebase_chat_list, firebase_chat_save, show_dialog} from '../reducer/App_reducer';
+
+import ChattingDialog from './mycom/ChattingDialog';
 
 class Listview extends React.Component {
 
+  handleRoomClick = (row) => {
+    this.props.dispatch(firebase_chat_list(row));
+    this.props.dispatch(show_dialog(true) );
+  }
+
+  handleSendMsg = () => {
+    let data = {
+      msg: this.inputMsg.value,
+      msgtype: "0",
+      uid: this.props.uid,
+      readUsers: [this.props.uid]      
+    }
+    this.props.dispatch(firebase_chat_save(data));
+    this.inputMsg.value = "";
+  };
+
   render() {
     const { classes, rooms, users } = this.props;
+
     rooms.map((row, inx) => {
       //console.log(row);
       if (row.peer) {
@@ -34,7 +54,7 @@ class Listview extends React.Component {
         <List className={classes.list}>
               {
                 rooms.map((row, inx) => (
-                    <ListItem button key={inx}>
+                    <ListItem button key={inx} onClick={this.handleRoomClick.bind(this, row)}>
                       <Avatar>
                         { row.photo 
                           ? <img src={row.photo} alt="Profile" className={classes.Image}/>
@@ -50,6 +70,7 @@ class Listview extends React.Component {
                 ))
               }          
         </List>
+        <ChattingDialog />        
       </div>
     );
   }

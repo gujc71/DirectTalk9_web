@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -9,11 +11,16 @@ import WorkIcon from '@material-ui/icons/PermIdentity';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Typography from '@material-ui/core/Typography';
 
-import { connect } from 'react-redux';
-
 import styles from './mycom/styles4List';
+import {firebase_find_chatroom, show_dialog} from '../reducer/App_reducer';
+import ChattingDialog from './mycom/ChattingDialog';
 
 class Listview extends React.Component {
+  handleUserClick = (uid) => {
+    this.props.dispatch(firebase_find_chatroom(uid));
+    this.props.dispatch(show_dialog(true) );
+  }
+
   render() {
     const { classes, users } = this.props;
     return (
@@ -24,7 +31,7 @@ class Listview extends React.Component {
         <List className={classes.list}>
               {
                   users.map((row, inx) => (
-                      <ListItem button key={inx}>
+                      <ListItem button key={inx} onClick={this.handleUserClick.bind(this, row.uid)}>
                         <Avatar className={classes.Avata}>
                           { row.photourl 
 						                  ? <img src={row.photourl} alt="Profile" className={classes.Image}/>
@@ -40,6 +47,7 @@ class Listview extends React.Component {
                   ))
               }          
         </List>
+        <ChattingDialog />  
       </div>
     );
   }

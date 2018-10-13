@@ -1,0 +1,100 @@
+
+.chat-list { 
+   padding: 10px 0px;
+} 
+
+.chat-row { 
+  display:inline-block;
+  _border: 1px solid;
+  width: 99%;
+  margin-top: 4px;
+  list-style: none;
+} 
+
+.chat-people { 
+  float: left;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  _border: 1px solid;
+  vertical-align: top;
+} 
+
+.chat-people-name { 
+	margin-left: 50px;
+	font-size: 12px;
+}
+
+.chat-time{ 
+  display:inline-block;
+} 
+
+.chat-info-left{ 
+  float: left;
+  font-size: 12px;
+  margin-left: 5px;
+} 
+
+.chat-info-right{ 
+  float: right;
+  font-size: 12px;
+  margin-right: 5px;
+} 
+
+.chat-unread-right{ 
+  float: right;
+  font-size: 12px;
+  margin-right: 5px;
+}
+   
+.chat-bubble-left { 
+  float: left;
+  position: relative; 
+  background: lightgray; 
+  border-radius: .4em; 
+  padding: 5px 12px 5px 12px;
+  margin-left: 10px;
+  width: auto;
+} 
+
+.chat-bubble-left:after { 
+  content: ''; 
+  position: absolute; 
+  left: 0; 
+  top: 15px; 
+  width: 0; 
+  height: 0; 
+  border: 10px solid transparent; 
+  border-right-color: lightgray; 
+  border-left: 0; 
+  border-top: 0; 
+  margin-top: -8px; 
+  margin-left: -10px; 
+}
+
+.chat-bubble-right { 
+  float: right;
+  position: relative; 
+  background: yellow; 
+  border-radius: .4em; 
+  padding: 5px 12px 5px 12px;
+  margin-right: 10px;
+  width: auto;
+} 
+
+
+.chat-bubble-right:after { 
+  content: ''; 
+  position: absolute; 
+  right: 0; 
+  top: 15px; 
+  width: 0; 
+  height: 0; 
+  border: 10px solid transparent; 
+  border-left-color: yellow; 
+  border-right: 0; 
+  border-top: 0; 
+  margin-top: -8px; 
+  margin-right: -10px; 
+}
+

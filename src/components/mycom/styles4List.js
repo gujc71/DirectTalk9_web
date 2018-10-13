@@ -18,6 +18,12 @@ const styles = theme => ({
   Image: {
       width: '40px',
       height: '40px',
+  },
+  dialogTitle: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "90%"
   }
 });
 

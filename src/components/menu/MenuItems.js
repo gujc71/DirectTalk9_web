@@ -20,22 +20,22 @@ function MenuItems(props) {
   const { classes } = props;
   return (
   <div>
-	<NavLink to="UserList" className={classes.item} activeClassName="active">	
-		<ListItem button>
-		  <ListItemIcon>
-			<UsersIcon />
-		  </ListItemIcon>
-		  <ListItemText primary="Users" />
-		</ListItem>
-	</NavLink>
-	<NavLink to="RoomList" className={classes.item} activeClassName="active">	
-		<ListItem button>
-		  <ListItemIcon>
-			<RoomsIcon />
-		  </ListItemIcon>
-		  <ListItemText primary="Rooms" />
-		</ListItem>
-	</NavLink>
+    <NavLink to="UserList" className={classes.item} activeClassName="active">	
+      <ListItem button>
+        <ListItemIcon>
+        <UsersIcon />
+        </ListItemIcon>
+        <ListItemText primary="Users" />
+      </ListItem>
+    </NavLink>
+    <NavLink to="RoomList" className={classes.item} activeClassName="active">	
+      <ListItem button>
+        <ListItemIcon>
+        <RoomsIcon />
+        </ListItemIcon>
+        <ListItemText primary="Rooms" />
+      </ListItem>
+    </NavLink>
     <NavLink to="UserProfile" className={classes.item} activeClassName="active">    
         <ListItem button >
           <ListItemIcon>
