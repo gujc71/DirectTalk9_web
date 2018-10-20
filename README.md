@@ -21,7 +21,7 @@ This app is suitable for enterprise messenger where all users appears because th
 
 ### Install & Run ###
 
-- git clone https://github.com/gujc71/directTalk9_react.git
+- git clone https://github.com/gujc71/DirectTalk9_web.git
 - npm install
 - set config for [firebase](https://firebase.google.com/docs/web/setup?authuser=0) in Firestore.js 
 - enable services(Auth, Storage, Firestore) in the firebase console.
