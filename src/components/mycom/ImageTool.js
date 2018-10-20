@@ -34,7 +34,6 @@ export default function ResizeImage(file, callback) {
 			var imageurl = canvas.toDataURL(file.type);
 			
 			if (callback) callback(imageurl);
-			//document.getElementById('output').src = imageurl;
 		}
 	}
 	reader.readAsDataURL(file);

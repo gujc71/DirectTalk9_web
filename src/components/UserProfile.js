@@ -74,13 +74,18 @@ class UserProfile extends React.Component {
 
         const user = this.state;
         let data = {
-          userid: user.userid, usernm: user.usernm, usermsg: user.usermsg, userphoto: user.userphoto
+          uid: this.props.uid,
+          userid: user.userid, usernm: user.usernm, usermsg: user.usermsg
         };
+        if (user.userphoto) data["userphoto"] = user.userphoto;
         const _this = this;
 
         if (this.photofile.value) {
           imageTool(this.photofile.files[0], (imageurl) =>  {
-            storage.child('userPhoto/'+ this.props.uid).putString(imageurl.replace('data:image/jpeg;base64,',''), 'base64').then(function(snapshot ) {
+            const inx = imageurl.indexOf(';base64,');
+            if (inx>0) imageurl = imageurl.substring( inx+8, imageurl.length);
+
+            storage.child('userPhoto/'+ this.props.uid).putString(imageurl, 'base64').then(function(snapshot ) {
               _this.setState({..._this.state, userphoto: _this.props.uid});
               data.userphoto = _this.props.uid;
         

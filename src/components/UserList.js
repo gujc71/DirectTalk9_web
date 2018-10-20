@@ -16,13 +16,14 @@ import {firebase_find_chatroom, show_dialog} from '../reducer/App_reducer';
 import ChattingDialog from './mycom/ChattingDialog';
 
 class Listview extends React.Component {
-  handleUserClick = (uid) => {
-    this.props.dispatch(firebase_find_chatroom(uid));
+  handleUserClick = (user) => {
+    this.props.dispatch(firebase_find_chatroom(user));
     this.props.dispatch(show_dialog(true) );
   }
 
   render() {
-    const { classes, users } = this.props;
+    const { classes, users, uid } = this.props;
+
     return (
       <div className={classes.root}>
         <Typography variant="title" gutterBottom align="center">
@@ -31,7 +32,8 @@ class Listview extends React.Component {
         <List className={classes.list}>
               {
                   users.map((row, inx) => (
-                      <ListItem button key={inx} onClick={this.handleUserClick.bind(this, row.uid)}>
+                    row.uid !== uid &&
+                      <ListItem button key={inx} onClick={this.handleUserClick.bind(this, row)}>
                         <Avatar className={classes.Avata}>
                           { row.photourl 
 						                  ? <img src={row.photourl} alt="Profile" className={classes.Image}/>
@@ -59,6 +61,7 @@ Listview.propTypes = {
 
 let mapStateToProps = (state) => {
   return {
+    uid: state.uid,
     users: state.users,
   };
 }

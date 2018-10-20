@@ -112,12 +112,13 @@ class Menu extends React.Component {
           <Typography component="h1" variant="title" color="inherit" noWrap className={classes.title}>
             DirectTalk9 Ver.Web
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={this.props.unreadcount} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-
+          {this.props.unreadcount>0 &&
+            <IconButton color="inherit">
+              <Badge badgeContent={this.props.unreadcount} color="secondary">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+          }
           <IconButton color="inherit" buttonRef={node => {this.anchorEl = node;}}
             aria-owns={peopleOpen ? 'menu-list-grow' : null}
             aria-haspopup="true"

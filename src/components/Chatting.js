@@ -28,7 +28,6 @@ class Listview extends React.Component {
   
   render() {
     const { classes, uid, chattings, selectedRoom } = this.props;
-    console.log(selectedRoom);
 
     return (
       <div className={classes.root}>
