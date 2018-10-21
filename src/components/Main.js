@@ -71,6 +71,8 @@ class Main extends React.Component {
   
   componentWillReceiveProps(nextProps) {
     if (!this.state.loading & this.props.users.length===0) return;
+    if (!this.state.loading) return;
+
     this.props.firebase_rooms_list();
     this.setState({loading: false});
   }

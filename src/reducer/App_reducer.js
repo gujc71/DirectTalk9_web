@@ -186,7 +186,6 @@ export const firebase_rooms_list = () =>{
 
                         if (change.type === "added") {
                           row = cleaningdata (row);
-//                          unreadcount += row.count;
                           newlist.push(row);
                         } else
                         if (change.type === "modified") {
