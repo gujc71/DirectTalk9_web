@@ -379,7 +379,6 @@ export const firebase_chat_save = (data) => {
 
 const initialState = {
   uid: null,
-  boards: [], 
   users: [],
   rooms: [],
   unreadcount: 0,
