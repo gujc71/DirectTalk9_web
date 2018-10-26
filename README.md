@@ -12,7 +12,7 @@ This app is suitable for enterprise messenger where all users appears because th
 
 - [Android](https://github.com/gujc71/DirectTalk9)
 - Web: this
-- PC (Windows): To be developed
+- [PC (Electron)](https://github.com/gujc71/DirectTalk9_pc)
 
 ### Issues ###
 - The serverTimestamp is required to store the message send time, while the serverTimestamp requires firebase-admin. This SW was created without firebase-admin, so the Javascript Date class was used instead of serverTimestamp. Therefore, there may be a problem when using it with the Android version. If you use both versions together, install firebase-admin.
@@ -24,7 +24,7 @@ This app is suitable for enterprise messenger where all users appears because th
 - git clone https://github.com/gujc71/DirectTalk9_web.git
 - npm install
 - set config for [firebase](https://firebase.google.com/docs/web/setup?authuser=0) in Firestore.js 
-- enable services(Auth, Storage, Firestore) in the firebase console.
+- enable services(Authentication, Storage, Firestore) in the firebase console.
 - npm start
 
 

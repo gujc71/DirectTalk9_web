@@ -1,7 +1,7 @@
 import React from 'react';
 import {storage} from '../../reducer/Firestore';
 
-class MyFile extends React.Component {
+class ChatItemFile extends React.Component {
 
   componentDidMount() {
     const link = this.link;
@@ -26,4 +26,4 @@ class MyFile extends React.Component {
   }
 } 
 
-export default MyFile;
+export default ChatItemFile;

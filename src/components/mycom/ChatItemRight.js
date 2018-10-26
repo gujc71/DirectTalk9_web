@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ChatItem_Image from './ChatItem_Image';
-import ChatItem_File from './ChatItem_File';
+import ChatItemImage from './ChatItemImage';
+import ChatItemFile from './ChatItemFile';
 import './chattingItem.css';
 
-class ChatItem_Right extends React.Component {
+class ChatItemRight extends React.Component {
   
   render() {
     const { item, beforeItem } = this.props;
@@ -19,7 +19,7 @@ class ChatItem_Right extends React.Component {
               {
                 item.msgtype==="0"
                 ? <div className="chat-bubble-right">{item.msg}</div>
-                : item.msgtype==="1" ? <ChatItem_Image item={item} align="right"/> : <div className="chat-bubble-right"><ChatItem_File item={item}/></div>
+                : item.msgtype==="1" ? <ChatItemImage item={item} align="right"/> : <div className="chat-bubble-right"><ChatItemFile item={item}/></div>
               }
               <div className="chat-info-right">
                 <div className="chat-time">{item.time}</div>
@@ -30,4 +30,4 @@ class ChatItem_Right extends React.Component {
   }
 }
 
-export default ChatItem_Right;
+export default ChatItemRight;

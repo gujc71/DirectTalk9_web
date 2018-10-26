@@ -49,10 +49,11 @@ class Listview extends React.Component {
         const roomusers = Object.keys(row.users);
         var title = "";
         roomusers.some(function(item) {
-          if (uid===item) return;
+          if (uid===item) return false;
           const user = users.find(user => user.uid === item);
           if (user) title += user.usernm + ",";
           if (title.length > 30) return true;
+          return false;
         })
         row.title = title.substring(0, title.length-1);
       }

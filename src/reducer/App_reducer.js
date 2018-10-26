@@ -111,7 +111,8 @@ export const firebase_user_list = () =>{
                               }).catch(function(error) {
                                 console.log(error);
                               });
-                        }      
+                        }
+                        return user;
                       });
                     }    
                 });
@@ -160,6 +161,7 @@ export const firebase_rooms_list = () =>{
             switch(row.msgtype){
                 case "1": row.msg = "Image"; break;
                 case "2": row.msg = "File"; break;
+                default:
             }
           }   
 
@@ -239,6 +241,7 @@ export const firebase_make_chatroom = (toUsers) => {
       }
       toUsers.map(inx => {
         makeRoomdata.users[users[inx].uid] = 0;
+        return inx;
       });
       makeRoomdata.users[uid] = 0;        
       dispatch(chat_init(makeRoomdata));
@@ -293,6 +296,7 @@ export const firebase_chat_list = (roomInfo) =>{
             roomuserInfos[row]["usernm"] = users[inx].usernm;
             roomuserInfos[row]["photourl"] = users[inx].photourl;
           }
+          return row;
         })
         users = null;
         roomusers = null;

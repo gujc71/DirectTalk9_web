@@ -1,7 +1,7 @@
 import React from 'react';
 import {storage} from '../../reducer/Firestore';
 
-class MyImage extends React.Component {
+class ChatItemImage extends React.Component {
       
   componentDidMount() {
     const img = this.img;
@@ -23,4 +23,4 @@ class MyImage extends React.Component {
   }
 }
 
-export default MyImage;
+export default ChatItemImage;

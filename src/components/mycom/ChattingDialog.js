@@ -20,8 +20,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import styles from './styles4List';
 import {firebase_rooms_save, firebase_chat_save, show_dialog} from '../../reducer/App_reducer';
 
-import ChatItem_Left from './ChatItem_Left';
-import ChatItem_Right from './ChatItem_Right';
+import ChatItemLeft from './ChatItemLeft';
+import ChatItemRight from './ChatItemRight';
 import {storage} from '../../reducer/Firestore';
 import imageTool from './ImageTool';
 
@@ -129,8 +129,8 @@ class ChattingDialog extends React.Component {
             {
               chattings.map((row, inx) => 
                 uid===row.uid
-                ? <ChatItem_Right key={inx} item={row} beforeItem={chattings[inx-1]}/>
-                : <ChatItem_Left key={inx} item={row}  beforeItem={chattings[inx-1]}/>
+                ? <ChatItemRight key={inx} item={row} beforeItem={chattings[inx-1]}/>
+                : <ChatItemLeft key={inx} item={row}  beforeItem={chattings[inx-1]}/>
               )
             }          
           </ul>  

@@ -2,11 +2,11 @@ import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import WorkIcon from '@material-ui/icons/PermIdentity';
 
-import ChatItem_Image from './ChatItem_Image';
-import ChatItem_File from './ChatItem_File';
+import ChatItemImage from './ChatItemImage';
+import ChatItemFile from './ChatItemFile';
 import './chattingItem.css';
 
-class ChatItem_Left extends React.Component {
+class ChatItemLeft extends React.Component {
   
   render() {
     const { item, beforeItem } = this.props;
@@ -30,7 +30,7 @@ class ChatItem_Left extends React.Component {
               {
                 item.msgtype==="0"
                 ? <div className="chat-bubble-left">{item.msg}</div>
-                : item.msgtype==="1" ? <ChatItem_Image item={item}  align="left"/> : <div className="chat-bubble-left"><ChatItem_File item={item}/></div>
+                : item.msgtype==="1" ? <ChatItemImage item={item}  align="left"/> : <div className="chat-bubble-left"><ChatItemFile item={item}/></div>
               }
               <div className="chat-info-left">
                 <div className="chat-time">{item.time}</div>
@@ -41,4 +41,4 @@ class ChatItem_Left extends React.Component {
   }
 }
 
-export default ChatItem_Left;
+export default ChatItemLeft;
